@@ -9,11 +9,11 @@ namespace MaterialTestTracker.Commands
 {
     public class RelayCommand : ICommand
     {
-        private Action<object> execute; //execution logic
-        private Func<object, bool> canExecute; //detects whether command can be executed
+        private Action<object> execute;
+        private Func<object, bool> canExecute;
 
 
-        public event EventHandler CanExecuteChanged //is called when conditions for whether command can be executed or not change
+        public event EventHandler CanExecuteChanged
         {
             add { CommandManager.RequerySuggested += value; }
             remove { CommandManager.RequerySuggested -= value; }
