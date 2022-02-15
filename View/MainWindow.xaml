@@ -1,0 +1,34 @@
+﻿<Window x:Class="MaterialTestTracker.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MaterialTestTracker"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Основні дані" Height="600" Width="450">
+    <Grid Background="#ebf4fa">
+        <Border Margin="15" Background="White" VerticalAlignment="Center" Padding="40" CornerRadius="20">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="50" Color="LightGray" ShadowDepth="5"></DropShadowEffect>
+            </Border.Effect>
+            <StackPanel>
+                <TextBlock Text="Основні дані" FontSize="30" HorizontalAlignment="Center" FontWeight="Bold" Margin="0 5 0 20"/>
+                <Grid>
+                    <TextBox Text="{Binding Path=FirstAndSecondName}" materialDesign:HintAssist.Hint="Завідуючий лабораторії" Margin="0 5 105 5" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                    <Label Content="Запам'ятати" Margin="0 15 0 5" HorizontalAlignment="Right"/>
+                    <CheckBox x:Name="CheckBoxForRememberName" IsChecked="False" HorizontalAlignment="Right" Margin="10 7 80 0"/>
+                </Grid>
+                <TextBox Text="{Binding Path=ProtocolNumber}" materialDesign:HintAssist.Hint="Номер протоколу" Margin="0 5" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                <TextBox Text="{Binding Path=Material}" materialDesign:HintAssist.Hint="Матеріал" Margin="0 5" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                <TextBox Text="{Binding Path=Indicators}" materialDesign:HintAssist.Hint="Показники"  Margin="0 5" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                <TextBox Text="{Binding Path=Customer}" materialDesign:HintAssist.Hint="Замовник"  Margin="0 5" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                <TextBox Text="{Binding Path=NumberOfContractWithCustomer}"  materialDesign:HintAssist.Hint="Договір" Margin="0 5" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                <Grid Margin="0 5">
+                    <DatePicker SelectedDate="{Binding Path=Date}" HorizontalAlignment="Right"></DatePicker>
+                </Grid>
+                <Button Command="{Binding Path=NextButton}"  Content="Далі" Margin="0 20 0 0"></Button>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
